@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 flex-1">
           
           {/* Left Column: Text & Buttons */}
-          <div className="text-left pb-12 lg:pb-20 flex flex-col justify-center self-center">
+          <div className="text-left pb-4 lg:pb-20 flex flex-col justify-center self-center">
             <ScrollReveal direction="left">
               <div className="tag-pill mb-6 w-fit">
                 <span className="w-2 h-2 bg-primary-green rounded-full animate-pulse" />
@@ -76,7 +76,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Column: Phone Mockup */}
-          <div className="relative flex justify-center lg:justify-end self-end pt-10 lg:pt-16 w-full -mb-px z-10">
+          <div className="relative flex justify-center lg:justify-end self-end pt-2 lg:pt-16 w-full -mb-px z-10">
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}

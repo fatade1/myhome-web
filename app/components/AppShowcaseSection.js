@@ -97,13 +97,13 @@ export default function AppShowcaseSection() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div
-              className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-end ${
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-20 items-end ${
                 feat.imageRight ? "" : "lg:[&>*:first-child]:order-2"
               }`}
             >
               {/* Text block */}
               <ScrollReveal direction={feat.imageRight ? "left" : "right"}>
-                <div className="pb-16 lg:pb-28">
+                <div className="pb-6 lg:pb-28">
                   {/* Tag */}
                   <div className="flex items-center gap-3 mb-6">
                     <div

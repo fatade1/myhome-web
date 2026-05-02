@@ -12,7 +12,7 @@ export default function ComingSoonSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 h-full">
           {/* Text */}
-          <div className="text-center lg:text-left pb-24 lg:pb-32 flex flex-col justify-center">
+          <div className="text-center lg:text-left pb-2 lg:pb-32 flex flex-col justify-center">
             <ScrollReveal>
               <div className="tag-pill w-fit mx-auto lg:mx-0 mb-6">
                 <span className="w-2 h-2 bg-primary-green rounded-full animate-pulse" />
@@ -63,7 +63,7 @@ export default function ComingSoonSection() {
           </div>
 
           {/* Phone mockup */}
-          <div className="flex justify-center lg:justify-end items-end h-full pt-10">
+          <div className="flex justify-center lg:justify-end items-end h-full pt-0">
             <ScrollReveal delay={0.2} direction="right">
               <motion.div
                 initial={{ opacity: 0, y: 80 }}
