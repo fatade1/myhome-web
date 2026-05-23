@@ -15,13 +15,13 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex-1 flex flex-col">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 flex-1">
-          
+
           {/* Left Column: Text & Buttons */}
           <div className="text-left pb-4 lg:pb-20 flex flex-col justify-center self-center">
             <ScrollReveal direction="left">
               <div className="tag-pill mb-6 w-fit">
                 <span className="w-2 h-2 bg-primary-green rounded-full animate-pulse" />
-                Coming Soon on iOS & Android
+                Coming Soon on iOS &amp; Android
               </div>
             </ScrollReveal>
 
@@ -30,16 +30,16 @@ const HeroSection = () => {
                 className="text-4xl sm:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-bold text-white leading-[1.1] tracking-tight mb-6"
                 style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
               >
-                Everything About <br className="hidden lg:block" />
-                <span className="text-primary-green">Your Home</span>{" "}
-                in One App
+                Helping Nigerians{" "}
+                <span className="text-primary-green">Save for Rent</span>,{" "}
+                Find Trusted Homes &amp; Manage Properties
               </h1>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.2}>
               <p className="text-lg sm:text-xl text-white/60 max-w-lg leading-relaxed mb-10">
-                Search properties, save for rent, book shortlets, and manage your
-                home, all from a single Nigerian-built app.
+                11+1 Rent Savings, Trusted Properties, Verified Shortlets, and
+                Home Management — all from one Nigerian-built platform.
               </p>
             </ScrollReveal>
 
@@ -86,10 +86,10 @@ const HeroSection = () => {
               <div className="relative w-[340px] sm:w-[420px] lg:w-[500px] xl:w-[620px]">
                 {/* Glow behind phone */}
                 <div className="absolute inset-0 -z-10 blur-[80px] bg-primary-green/20 rounded-t-[3rem] scale-90" />
-                
+
                 <Image
                   src="/app-screens/hero.png"
-                  alt="MyHome App"
+                  alt="MyHome App — Nigerian property savings and home management"
                   width={800}
                   height={1600}
                   className="w-full h-auto drop-shadow-2xl rounded-t-[2.5rem] rounded-b-none"

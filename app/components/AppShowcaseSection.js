@@ -10,26 +10,38 @@ const features = [
     icon: Search,
     iconColor: "text-emerald-400",
     iconBg: "from-emerald-500/20 to-green-600/10",
-    headline: "Find Your Perfect Home Across Nigeria",
+    headline: "Find Homes with More Confidence",
     description:
-      "Search thousands of verified listings in Lagos, Abuja, Port Harcourt, and more. Filter by location, budget, size, and property type. Every listing is confirmed before it goes live, so you know what you're booking is real.",
+      "MyHome Africa is building a trusted property review system that helps reduce fake listings, unreliable agents, and unclear property information. Every listing goes through a review process designed to improve trust and transparency across Nigeria.",
     cta: { label: "Search Properties", href: "/tenants" },
     screen: "/app-screens/search.png",
     alt: "MyHome App Property Search Screen",
     imageRight: true,
+    bullets: [
+      "Carefully reviewed listings",
+      "Reduced fake agent risk",
+      "Clearer property information",
+      "Search by location, price, and type",
+    ],
   },
   {
     tag: "11+1 Savings",
     icon: PiggyBank,
     iconColor: "text-violet-400",
     iconBg: "from-violet-500/20 to-purple-600/10",
-    headline: "Save for 11 Months. We Cover the 12th.",
+    headline: "Save for 11 Months. Let MyHome Support the 12th.",
     description:
-      "The 11+1 Savings plan lets you save your rent in monthly installments over 11 months. When you complete your plan, MyHome covers your final month's contribution completely. No loan. No stress. Just consistent saving.",
+      "The 11+1 Savings system helps you save toward your rent monthly. Save for 11 months and MyHome supports your final month — helping you reach your rent goal without the last-minute pressure. For example: if your yearly rent is ₦1,200,000, save ₦100,000 monthly for 11 months. MyHome supports the final ₦100,000.",
     cta: { label: "Learn About 11+1 Savings", href: "/savings" },
     screen: "/app-screens/savings.png",
     alt: "MyHome App 11+1 Savings Dashboard",
     imageRight: false,
+    bullets: [
+      "Set your rent target in naira",
+      "Save monthly at your own pace",
+      "Track your progress to 100%",
+      "MyHome supports month 12",
+    ],
   },
   {
     tag: "Rent Payments",
@@ -38,24 +50,36 @@ const features = [
     iconBg: "from-blue-500/20 to-indigo-600/10",
     headline: "Pay Rent Securely and Track Every Naira",
     description:
-      "Pay your rent directly through the app and receive instant digital receipts. Your full payment history is always available, so there are never any disputes. No more paper receipts, no more arguments.",
+      "Pay your rent directly through the app and receive instant digital receipts. Your full payment history is always available, so there are never any disputes. No more paper receipts. No more arguments over what was paid and when.",
     cta: { label: "For Tenants", href: "/tenants" },
     screen: "/app-screens/payment.png",
     alt: "MyHome App Rent Payment Screen",
     imageRight: true,
+    bullets: [
+      "Secure in-app rent payments",
+      "Instant digital receipts",
+      "Full payment history",
+      "No hidden charges",
+    ],
   },
   {
     tag: "Shortlets",
     icon: Building2,
     iconColor: "text-amber-400",
     iconBg: "from-amber-500/20 to-orange-600/10",
-    headline: "Book Verified Shortlets Without the Stress",
+    headline: "Reviewed Shortlets for Safer Stays",
     description:
-      "Browse furnished apartments and shortlet properties across Nigeria. Check amenities, read real guest reviews, pick your dates, and book securely all in one place. No calls, no back and forth, just straightforward bookings.",
+      "Whether you need a short stay or you host a shortlet property, MyHome provides a more organised way to discover, book, and manage short-term rentals. Properties are reviewed for better transparency — so what you see online is closer to what you get.",
     cta: { label: "Explore Shortlets", href: "/shortlets" },
     screen: "/app-screens/shortlet.png",
     alt: "MyHome App Shortlet Booking Screen",
     imageRight: false,
+    bullets: [
+      "Discover reviewed shortlets",
+      "View availability and amenities",
+      "Book with more confidence",
+      "Manage bookings as a host",
+    ],
   },
 ];
 
@@ -69,7 +93,7 @@ export default function AppShowcaseSection() {
             {[
               { value: "500+", label: "People on the waitlist" },
               { value: "4", label: "Core features at launch" },
-              { value: "100%", label: "Listings verified" },
+              { value: "Trusted", label: "Review process for listings" },
               { value: "₦0", label: "Hidden fees, ever" },
             ].map((stat, i) => (
               <div key={i}>
@@ -111,9 +135,7 @@ export default function AppShowcaseSection() {
                     >
                       <feat.icon size={20} className={feat.iconColor} />
                     </div>
-                    <span
-                      className="text-sm font-semibold text-gray-400 uppercase tracking-widest"
-                    >
+                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
                       {feat.tag}
                     </span>
                   </div>
@@ -124,9 +146,24 @@ export default function AppShowcaseSection() {
                   >
                     {feat.headline}
                   </h2>
-                  <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                  <p className="text-gray-500 text-lg leading-relaxed mb-6">
                     {feat.description}
                   </p>
+
+                  {/* Bullet points */}
+                  <ul className="space-y-2 mb-8">
+                    {feat.bullets.map((b, j) => (
+                      <li key={j} className="flex items-center gap-3 text-gray-600 text-[15px]">
+                        <div className="w-5 h-5 rounded-full bg-light-green flex items-center justify-center flex-shrink-0">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M2 5l2 2 4-4" stroke="#044222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
                   <Link
                     href={feat.cta.href}
                     className="inline-flex items-center gap-2 text-dark-green font-semibold text-base group"

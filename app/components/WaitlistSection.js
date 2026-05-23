@@ -4,7 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const userTypes = ["Tenant", "Landlord", "Agent", "Investor"];
+const userTypes = [
+  "Tenant",
+  "Landlord",
+  "Property Owner",
+  "Agent",
+  "Shortlet Host",
+  "Investor",
+];
 
 export default function WaitlistSection() {
   const [formData, setFormData] = useState({
@@ -25,8 +32,9 @@ export default function WaitlistSection() {
     e.preventDefault();
     setLoading(true);
 
-    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScIY8CTaHQs5tlf1f9J3o0TUlPJ4FSRRYKuQsgDl8Ljq64WTA/formResponse";
-    
+    const GOOGLE_FORM_URL =
+      "https://docs.google.com/forms/d/e/1FAIpQLScIY8CTaHQs5tlf1f9J3o0TUlPJ4FSRRYKuQsgDl8Ljq64WTA/formResponse";
+
     const formDataBody = new FormData();
     formDataBody.append("entry.2011588248", formData.fullName);
     formDataBody.append("entry.949961037", formData.email);
@@ -37,19 +45,15 @@ export default function WaitlistSection() {
     try {
       await fetch(GOOGLE_FORM_URL, {
         method: "POST",
-        mode: "no-cors", // Google Forms doesn't support CORS
+        mode: "no-cors",
         body: formDataBody,
       });
-      
-      // Since we use 'no-cors', we won't get a proper response object, 
-      // but if we reach here without an error, the submission was sent.
+
       setLoading(false);
       setSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);
       setLoading(false);
-      // Even if there's an error (like CORS), the data usually reaches Google.
-      // We'll show the success state to the user.
       setSubmitted(true);
     }
   };
@@ -76,10 +80,10 @@ export default function WaitlistSection() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
                 style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
               >
-                Join the MyHome Waitlist
+                Be Among the First to Experience MyHome Africa
               </h2>
               <p className="text-white/50 text-lg">
-                Be one of the first people to use MyHome when we launch.
+                Join the waitlist and get early updates when MyHome launches on iOS and Android.
               </p>
             </div>
           </ScrollReveal>
@@ -154,7 +158,7 @@ export default function WaitlistSection() {
                     {/* User Type */}
                     <div>
                       <label className="text-white/60 text-sm mb-2 block">I am a...</label>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         {userTypes.map((type) => (
                           <button
                             key={type}
@@ -185,7 +189,7 @@ export default function WaitlistSection() {
                         </>
                       ) : (
                         <>
-                          Join Waitlist
+                          Join the Waitlist
                           <ArrowRight size={18} />
                         </>
                       )}
@@ -219,10 +223,10 @@ export default function WaitlistSection() {
                     You&apos;re on the list! 🎉
                   </h3>
                   <p className="text-white/50 text-lg mb-2">
-                    Thank you for joining the MyHome waitlist.
+                    Thank you for joining the MyHome Africa waitlist.
                   </p>
                   <p className="text-white/40 text-sm">
-                    We&apos;ll notify you as soon as we launch. Stay tuned!
+                    We&apos;ll keep you updated as we get closer to launch.
                   </p>
                 </motion.div>
               )}

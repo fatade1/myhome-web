@@ -1,43 +1,36 @@
 "use client";
 import {
-  UserPlus,
-  UserCog,
-  Search,
+  ShieldCheck,
   PiggyBank,
-  Home,
+  Search,
+  Building2,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const steps = [
+const pillars = [
   {
-    step: 1,
-    title: "Create Account",
-    description: "Sign up in seconds with your email or phone number.",
-    icon: UserPlus,
-  },
-  {
-    step: 2,
-    title: "Choose Your Role",
-    description: "Select whether you're a tenant, landlord, agent, or investor.",
-    icon: UserCog,
-  },
-  {
-    step: 3,
-    title: "Explore Properties",
-    description: "Browse thousands of listings with smart filters and search.",
-    icon: Search,
-  },
-  {
-    step: 4,
-    title: "Save or Rent",
-    description: "Start saving towards rent or complete your rental instantly.",
     icon: PiggyBank,
+    title: "Help people save toward rent",
+    description:
+      "The 11+1 Savings system gives tenants a structured, achievable way to prepare for rent months ahead — removing the pressure of last-minute scrambling.",
   },
   {
-    step: 5,
-    title: "Manage Your Home",
-    description: "Track payments, manage guests, and monitor everything in one place.",
-    icon: Home,
+    icon: Search,
+    title: "Make property discovery more trustworthy",
+    description:
+      "Every listing on MyHome goes through a review process designed to reduce fake agents, unavailable properties, and unclear information.",
+  },
+  {
+    icon: Building2,
+    title: "Give landlords better tools",
+    description:
+      "Landlords and property owners deserve a platform that helps them manage tenants, track rent, and oversee their properties without the chaos.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Bring confidence to the housing process",
+    description:
+      "Whether renting, buying, saving, or managing a property — MyHome Africa is building the structure and transparency that Nigerian housing has been missing.",
   },
 ];
 
@@ -49,52 +42,47 @@ export default function HowItWorksSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16 lg:mb-20">
-            <div className="tag-pill mx-auto w-fit mb-6" style={{ color: "#044222", background: "rgba(4, 66, 34, 0.08)" }}>
-              How It Works
+          <div className="text-center mb-6">
+            <div
+              className="tag-pill mx-auto w-fit mb-6"
+              style={{ color: "#044222", background: "rgba(4, 66, 34, 0.08)" }}
+            >
+              Why We Built This
             </div>
             <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-3xl mx-auto"
               style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
             >
-              How MyHome Works
+              Built to Restore Trust in the{" "}
+              <span className="text-primary-green">Nigerian Housing Journey</span>
             </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-              Get started in just a few simple steps.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto">
-          {steps.map((item, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
-              <div className="flex gap-6 lg:gap-8 mb-6 last:mb-0">
-                {/* Timeline */}
-                <div className="flex flex-col items-center">
-                  <div className="step-number flex-shrink-0">
-                    {item.step}
-                  </div>
-                  {i < steps.length - 1 && (
-                    <div className="w-0.5 h-full min-h-[60px] bg-gradient-to-b from-primary-green/30 to-transparent mt-2" />
-                  )}
-                </div>
+        <ScrollReveal delay={0.1}>
+          <p className="text-gray-500 text-lg leading-relaxed text-center max-w-2xl mx-auto mb-16">
+            MyHome Africa exists because finding, renting, buying, and managing property in Nigeria
+            has become unnecessarily complicated. We are building a platform that helps people
+            save for rent, discover trusted homes, manage properties, and make better housing
+            decisions with confidence.
+          </p>
+        </ScrollReveal>
 
-                {/* Card */}
-                <div className="card-premium p-6 flex-1 flex items-start gap-4 mb-2">
-                  <div className="w-12 h-12 rounded-xl bg-light-green flex items-center justify-center flex-shrink-0">
-                    <item.icon size={22} className="text-dark-green" />
-                  </div>
-                  <div>
-                    <h3
-                      className="text-lg font-bold text-gray-900 mb-1"
-                      style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-[15px] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          {pillars.map((item, i) => (
+            <ScrollReveal key={i} delay={i * 0.1}>
+              <div className="card-premium p-8 flex items-start gap-5 h-full group">
+                <div className="w-14 h-14 rounded-2xl bg-light-green flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon size={24} className="text-dark-green" />
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-gray-900 mb-2"
+                    style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-[15px] leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </ScrollReveal>

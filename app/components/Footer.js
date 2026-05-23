@@ -52,8 +52,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-6">
-              Everything about your home in one powerful mobile platform.
-              Coming soon on iOS & Android.
+              Helping Nigerians save for rent, find trusted homes, and
+              manage properties. Coming soon on iOS &amp; Android.
             </p>
             
             <div className="flex flex-col gap-2">
